@@ -2,13 +2,14 @@
 
 SETUP_DIR=$HOME/.pio
 INSTALLED_FLAG=$SETUP_DIR/installed
+PIO_RELEASE=`cat /vagrant/release`
 
 mkdir -p $SETUP_DIR
 
 if [ ! -f $INSTALLED_FLAG ]; then
 
   echo "Installing PredictionIO..."
-  bash -e -c "$(curl -s https://install.prediction.io/install.sh)" 0 -y
+  bash -e -c "$(curl -s https://raw.githubusercontent.com/apache/incubator-predictionio/release/$PIO_RELEASE/bin/install.sh)" 0 -y
   if [ $? -ne 0 ]; then
 
     echo "ERROR: PredictionIO installation failed."
