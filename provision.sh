@@ -1,13 +1,14 @@
 #!/usr/bin/env bash
 
 SETUP_DIR=$HOME/.pio
+INSTALL_SCRIPT_PATH='https://raw.githubusercontent.com/apache/incubator-predictionio/master/bin/install.sh'
 
 mkdir -p $SETUP_DIR
 
 if [ ! -x "$(command -v pio-start-all)" ]; then
 
   echo "Installing PredictionIO..."
-  bash -e -c "$(curl -s https://install.prediction.io/install.sh)" 0 -y
+  bash -e -c "$(curl -s $INSTALL_SCRIPT_PATH)" 0 -y
   if [ $? -ne 0 ]; then
 
     echo "ERROR: PredictionIO installation failed."
