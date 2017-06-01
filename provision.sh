@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 SETUP_DIR=$HOME/.pio
-INSTALL_SCRIPT_PATH='https://raw.githubusercontent.com/apache/incubator-predictionio/master/bin/install.sh'
+INSTALL_SCRIPT_PATH="https://raw.githubusercontent.com/apache/incubator-predictionio/release/$PIO_RELEASE/bin/install.sh'
+PIO_RELEASE=`cat /vagrant/release`
 
 mkdir -p $SETUP_DIR
 

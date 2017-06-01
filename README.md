@@ -6,6 +6,8 @@ a virtual machine (VM) with VirtualBox. It is recommended for a quick
 PredictionIO installation in a testing or development environment, as it will
 save you from many of the common pitfalls of the installation process.
 
+Define a version you want to install on release file.
+
 Please refer to the
 [documentation site](http://docs.prediction.io/current/)
 for detailed usage and setup.
