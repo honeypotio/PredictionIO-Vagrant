@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
 SETUP_DIR=$HOME/.pio
-INSTALLED_FLAG=$SETUP_DIR/installed
 
 mkdir -p $SETUP_DIR
 
-if [ ! -f $INSTALLED_FLAG ]; then
+if [ ! -x "$(command -v pio-start-all)" ]; then
 
   echo "Installing PredictionIO..."
   bash -e -c "$(curl -s https://install.prediction.io/install.sh)" 0 -y
@@ -23,7 +22,6 @@ if [ ! -f $INSTALLED_FLAG ]; then
   else
 
     echo "Finish PredictionIO installation."
-    touch $INSTALLED_FLAG
 
   fi
 
